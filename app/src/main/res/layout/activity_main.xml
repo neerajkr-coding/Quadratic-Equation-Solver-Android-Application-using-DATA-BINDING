@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="myequation"
+            type="com.example.quadraticequationsolverapp.MyEquation" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/quad_eq_appbg"
+        tools:context=".MainActivity">
+
+
+        <TextView
+            android:id="@+id/textView_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/font"
+            android:text="Quadratic Equation\n         Solver"
+            android:textColor="@color/white"
+            android:textSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText_b"
+            android:text="@={myequation.b}"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/editText_a"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/editText_a"
+            app:layout_constraintTop_toBottomOf="@+id/editText_a"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:text="@={myequation.a}"
+            android:id="@+id/editText_a"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.268" />
+
+        <EditText
+            android:id="@+id/editText_c"
+            android:text="@={myequation.c}"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/editText_a"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/editText_a"
+            app:layout_constraintTop_toBottomOf="@+id/editText_b"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/button_solve"
+            android:onClick="@{myequation::solveEquation}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/font"
+            android:text="Solve!"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_c"
+            app:layout_constraintVertical_bias="0.154" />
+
+        <TextView
+            android:id="@+id/textView_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="104dp"
+            android:fontFamily="@font/font"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.184"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_solve" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
